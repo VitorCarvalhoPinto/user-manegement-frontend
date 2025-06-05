@@ -6,7 +6,7 @@ Este é o frontend de um sistema de gerenciamento de usuários, desenvolvido em 
 
 ## Como rodar o projeto
 
-1. **Clone o repositório**:
+1. **Clone o repositório** https://github.com/VitorCarvalhoPinto/user-manegement-frontend:
    ```powershell
    git clone <url-do-repositorio>
    cd user-manegement-frontend
