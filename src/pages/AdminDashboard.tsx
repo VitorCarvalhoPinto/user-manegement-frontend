@@ -19,7 +19,6 @@ export default function AdminDashboard() {
   const [selectedUser, setSelectedUser] = useState<any | null>(null);
   const [loading, setLoading] = useState(false);
 
-  // Estados para filtros e ordenação
   const [roleFilter, setRoleFilter] = useState("");
   const [sortBy, setSortBy] = useState("name");
   const [order, setOrder] = useState("asc");

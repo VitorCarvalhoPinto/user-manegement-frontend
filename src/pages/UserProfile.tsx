@@ -41,7 +41,7 @@ export default function UserProfile() {
 
       await updateProfile(updateData, authHeader);
       alert("Perfil atualizado com sucesso!");
-      setPassword(""); // Limpa o campo de senha após atualizar
+      setPassword("");
     } catch (error) {
       console.error("Error updating profile:", error);
       alert("Erro ao atualizar perfil");

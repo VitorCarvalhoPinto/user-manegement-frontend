@@ -1,3 +1,34 @@
+# User Management Frontend
+
+Bem-vindo ao projeto **User Management Frontend**!
+
+Este é o frontend de um sistema de gerenciamento de usuários, desenvolvido em React com TypeScript e TailwindCSS.
+
+## Como rodar o projeto
+
+1. **Clone o repositório**:
+   ```powershell
+   git clone <url-do-repositorio>
+   cd user-manegement-frontend
+   ```
+
+2. **Instale as dependências:**
+   ```powershell
+   npm install
+   ```
+
+3. **Inicie o projeto:**
+   ```powershell
+   npm start
+   ```
+   O app será aberto automaticamente no seu navegador, normalmente em [http://localhost:3000](http://localhost:3000).
+
+## Observações
+- Certifique-se de ter o [Node.js](https://nodejs.org/) instalado (recomendado versão 18 ou superior).
+- Caso precise parar o servidor, pressione `Ctrl + C` no terminal.
+
+---
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
