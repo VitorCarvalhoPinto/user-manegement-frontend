@@ -1,30 +1,31 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import { register } from "../services/authService";
 import Input from "../components/Input";
 import Button from "../components/Button";
 import Card from "../components/Card";
 import PageWrapper from "../components/PageWrapper";
-import api from "../api/axios";
 
 export default function Register() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setLoading(true);
+
     try {
-      await api.post("/auth/register", {
-        name,
-        email,
-        password,
-      });
+      await register(name, email, password);
       alert("Cadastro realizado com sucesso!");
       navigate("/");
     } catch (err) {
-      alert("Erro ao cadastrar. Tente novamente.");
+      console.error("Register error:", err);
+      alert("Erro ao cadastrar. Verifique os dados e tente novamente.");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -39,6 +40,7 @@ export default function Register() {
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
+            disabled={loading}
           />
           <Input
             label="Email"
@@ -46,6 +48,7 @@ export default function Register() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
+            disabled={loading}
           />
           <Input
             label="Senha"
@@ -53,8 +56,11 @@ export default function Register() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
+            disabled={loading}
           />
-          <Button type="submit" className="w-full">Cadastrar</Button>
+          <Button type="submit" className="w-full" disabled={loading}>
+            {loading ? "Cadastrando..." : "Cadastrar"}
+          </Button>
         </form>
         <p className="text-sm text-center mt-4">
           Já tem conta?{" "}
